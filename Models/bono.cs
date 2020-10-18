@@ -39,7 +39,7 @@ namespace BONO.Models
         [Display(Name="genero")]  
         public String genero { get; set; }
 
-       
+       [NotMapped]
         public String Response { get; set; }
 
     }
