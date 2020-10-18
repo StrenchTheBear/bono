@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using bono.Models;
+using bono.Data;
+
 
 namespace BONO.Controllers
 {
@@ -14,9 +16,12 @@ namespace BONO.Controllers
 
        private readonly ILogger<BonoController> _logger;
 
-        public BonoController(ILogger<BonoController> logger)
+       private readonly DatabaseContext _context;
+
+        public BonoController(ILogger<BonoController> logger, DatabaseContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -28,6 +33,9 @@ namespace BONO.Controllers
         public IActionResult Registrar(BONO.Models.bono objbono){
             if (ModelState.IsValid)
             {
+                _context.Add(objbono);
+                _context.SaveChanges();      
+                
                 objbono.Response = "AVILCA";
             }
             return View("index", objbono);
