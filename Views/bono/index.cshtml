@@ -1,0 +1,63 @@
+@model BONO.Models.bono
+
+@{
+    ViewData["Title"] = "BONO";
+}
+
+<div class="row">
+    <div class="col-md-4">  
+        <h1 class="display-4">Hecho por ALEJANDRO VILCA</h1>
+        <form asp-controller="Bono" asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>    
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div> 
+
+            <div class="form-group">
+                <label asp-for="Distrito" class="control-label"></label>
+                <input asp-for="Distrito" class="form-control" />
+                <span asp-validation-for="Distrito" class="text-danger"></span>
+            </div>   
+
+              <label>BANCO</label>
+            <select asp-for="Acccion">
+                <option >BBVA</option>
+                <option >BCP</option>
+                <option >MiBanco</option>                               
+            </select>
+            <br/>  
+
+            <div class="form-group">
+                <label asp-for="Edad" class="control-label"></label>
+                <input asp-for="Edad" class="form-control" />
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>  
+
+            <div class="form-group">
+            <input asp-for="Acccion2" type="radio" id="male" name="gender" value="male">
+            <label asp-for="Acccion2" for="male">Male</label><br>
+            <input asp-for="Acccion2" type="radio" id="female" name="gender" value="female">
+            <label asp-for="Acccion2" for="female">Female</label><br>
+            <input asp-for="Acccion2" type="radio" id="other" name="gender" value="other">
+            <label asp-for="Acccion2" for="other">Other</label>      
+            </div>
+
+            <div class="form-group">
+                 <button type="submit" class="btn btn-warning">Registrar</button> 
+            </div>                
+
+        </form>
+            
+        <td>@Html.DisplayTextFor(model => model.Response)</td>    
+    
+    </div>
+</div>
