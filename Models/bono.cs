@@ -32,11 +32,10 @@ namespace BONO.Models
 
 
         [Required(ErrorMessage = "Por favor, ingrese su Edad")]
-        [Display(Name="Edad")]             
-        
+        [Display(Name="Edad")]       
         public int Edad { get; set; }
 
-       [Required(ErrorMessage = "Por favor, ingrese su genero")]
+        [Required(ErrorMessage = "Por favor, ingrese su genero")]
         [Display(Name="genero")]  
         public String genero { get; set; }
 
