@@ -36,7 +36,7 @@ namespace BONO.Controllers
                 _context.Add(objbono);
                 _context.SaveChanges();      
                 
-                objbono.Response = "AVILCA";
+                objbono.Response = "AVILCAYÂÑEZ";
             }
             return View("index", objbono);
         }
