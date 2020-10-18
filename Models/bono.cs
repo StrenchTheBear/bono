@@ -1,8 +1,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BONO.Models
 {
+    [Table ("registro_bono")]
     public class bono
     {
         [Required(ErrorMessage = "Por favor, ingrese el Nombre")]
