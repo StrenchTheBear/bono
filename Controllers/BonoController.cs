@@ -28,7 +28,7 @@ namespace BONO.Controllers
         public IActionResult Registrar(BONO.Models.bono objbono){
             if (ModelState.IsValid)
             {
-                objbono.Response = "Registro de Base de Datos (*)";
+                objbono.Response = "AVILCA";
             }
             return View("index", objbono);
         }
